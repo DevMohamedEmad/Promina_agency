@@ -113,9 +113,9 @@ class albumController extends Controller
         }else {
             
             AlbumImages::where('album_id',$album_id )->delete();
-            $album->delete();
+           
         }
-
+        $album->delete();
 
         return redirect()->back();
     }

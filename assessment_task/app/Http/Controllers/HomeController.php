@@ -28,9 +28,9 @@ class HomeController extends Controller
         $userAlbums = Album::where('user_id', auth()->id())
                             ->leftJoin('album_images as ai', 'ai.album_id' , 'albums.id')
                             ->select( DB::raw('if(ai.id is null , 0 ,1) as album_images_counter'), 'name', 'albums.id')
-                            ->groupBy('ai.id')
+                            ->groupBy('albums.id')
                             ->get();
-dd($userAlbums );
+
         return view('home', compact('userAlbums'));
     }
 }
