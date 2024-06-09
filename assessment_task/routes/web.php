@@ -15,4 +15,4 @@ Route::get('/album/show/{id}', [App\Http\Controllers\albumController::class, 'sh
 Route::get('/album/edit/{id}', [App\Http\Controllers\albumController::class, 'edit'])->name('albums.edit');
 Route::put('/album/update', [App\Http\Controllers\albumController::class, 'update'])->name('albums.update');
 Route::post('/album/delete', [App\Http\Controllers\albumController::class, 'delete'])->name('albums.delete');
-Route::post('/album/all', [App\Http\Controllers\albumController::class, 'getAlbums'])->name('getAlbums');
+Route::post('/album/all', [App\Http\Controllers\albumController::class, 'getAlbumsToMoveImagesFromSpecificAlbumToAnother'])->name('getAlbums');

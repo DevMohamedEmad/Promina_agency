@@ -120,7 +120,7 @@ class albumController extends Controller
         return redirect()->back();
     }
 
-    public function getAlbums(Request $request){
+    public function getAlbumsToMoveImagesFromSpecificAlbumToAnother(Request $request){
 
         $albums = Album::whereNot('id' ,$request->expected_album_id)
         ->where('name', 'like', '%' . $request->term . '%')->orderBy('name')
